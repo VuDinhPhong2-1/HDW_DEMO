@@ -5,7 +5,7 @@ const Agenda = require('agenda');
 
 @Injectable()
 export class AgendaService {
-  private readonly logger: Logger;
+  private readonly logger = new Logger(AgendaService.name);
   private agenda: any;
 
   constructor() {

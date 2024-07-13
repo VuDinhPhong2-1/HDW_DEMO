@@ -21,10 +21,10 @@ import { Module, Logger } from '@nestjs/common';
   ],
   providers: [
     AppService,
-    {
-      provide: Logger,
-      useValue: new Logger('Global'),
-    },
+    // {
+    //   provide: Logger,
+    //   useValue: new Logger('Global'),
+    // },
   ],
 })
 export class AppModule {}
