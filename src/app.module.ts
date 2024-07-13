@@ -1,11 +1,10 @@
 // app.module.ts
-import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import { AgendaModule } from './agenda/agenda.module';
-// import { AgendaModule } from './agenda/agenda.module';
+import { Module, Logger } from '@nestjs/common';
 
 @Module({
   imports: [
@@ -20,6 +19,12 @@ import { AgendaModule } from './agenda/agenda.module';
     ScheduleModule.forRoot(),
     AgendaModule,
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: Logger,
+      useValue: new Logger('Global'),
+    },
+  ],
 })
 export class AppModule {}
