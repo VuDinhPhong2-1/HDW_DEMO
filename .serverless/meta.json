@@ -1,0 +1,192 @@
+{
+  "D:\\All_Project\\Project_HD\\HDW_DEMO": {
+    "versionSfCore": null,
+    "versionFramework": "4.1.12",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "env": {
+        "instance": {
+          "credentials": "<REDACTED>",
+          "serviceConfigFile": {
+            "org": "phongdev01",
+            "app": "serverless-hdw",
+            "service": "hdw-nestjs-serverless",
+            "useDotenv": true,
+            "plugins": [
+              "serverless-offline"
+            ],
+            "provider": {
+              "name": "aws",
+              "runtime": "nodejs20.x",
+              "environment": {
+                "MONGODB_URI": "mongodb+srv://vudinhphong261001:Alo0906412535@cluster0.nqfnlru.mongodb.net/"
+              },
+              "stage": "prod",
+              "region": "us-east-1",
+              "versionFunctions": true
+            },
+            "functions": {
+              "main": {
+                "handler": "dist/serverless.handler",
+                "events": [
+                  {
+                    "http": {
+                      "method": "ANY",
+                      "path": "/"
+                    }
+                  },
+                  {
+                    "http": {
+                      "method": "ANY",
+                      "path": "{proxy+}"
+                    }
+                  }
+                ],
+                "name": "hdw-nestjs-serverless-prod-main"
+              }
+            },
+            "package": {
+              "exclude": [
+                "node_modules/**",
+                "venv/**"
+              ],
+              "artifactsS3KeyDirname": "serverless/hdw-nestjs-serverless/prod/code-artifacts"
+            }
+          },
+          "configFileDirPath": "D:\\All_Project\\Project_HD\\HDW_DEMO",
+          "config": {
+            "type": "env"
+          },
+          "options": {
+            "function": "main",
+            "stage": "prod"
+          },
+          "stage": "prod",
+          "dashboard": {
+            "aws": {
+              "accessKeyId": "<REDACTED>",
+              "secretAccessKey": "<REDACTED>",
+              "sessionToken": "<REDACTED>"
+            },
+            "params": null,
+            "accessKey": "<REDACTED>"
+          }
+        },
+        "resolvers": {}
+      }
+    },
+    "composeServiceName": null,
+    "servicePath": "D:\\All_Project\\Project_HD\\HDW_DEMO",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "org": "phongdev01",
+      "app": "serverless-hdw",
+      "service": "hdw-nestjs-serverless",
+      "useDotenv": true,
+      "plugins": [
+        "serverless-offline"
+      ],
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs20.x",
+        "environment": {
+          "MONGODB_URI": "mongodb+srv://vudinhphong261001:Alo0906412535@cluster0.nqfnlru.mongodb.net/"
+        },
+        "stage": "prod",
+        "region": "us-east-1",
+        "versionFunctions": true
+      },
+      "functions": {
+        "main": {
+          "handler": "dist/serverless.handler",
+          "events": [
+            {
+              "http": {
+                "method": "ANY",
+                "path": "/"
+              }
+            },
+            {
+              "http": {
+                "method": "ANY",
+                "path": "{proxy+}"
+              }
+            }
+          ],
+          "name": "hdw-nestjs-serverless-prod-main"
+        }
+      },
+      "package": {
+        "exclude": [
+          "node_modules/**",
+          "venv/**"
+        ],
+        "artifactsS3KeyDirname": "serverless/hdw-nestjs-serverless/prod/code-artifacts"
+      }
+    },
+    "serviceRawFile": "# \"org\" ensures this Service is used with the correct Serverless Framework Access Key.\r\norg: phongdev01\r\n# \"app\" enables Serverless Framework Dashboard features and sharing them with other Services.\r\napp: serverless-hdw\r\nservice: hdw-nestjs-serverless\r\n\r\nuseDotenv: true\r\n\r\nplugins:\r\n  - serverless-offline\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs20.x\r\n  environment:\r\n    MONGODB_URI: ${env:MONGODB_URI}\r\n\r\nfunctions:\r\n  main:\r\n    handler: dist/serverless.handler\r\n    events:\r\n      - http:\r\n          method: ANY\r\n          path: /\r\n      - http:\r\n          method: ANY\r\n          path: '{proxy+}'\r\npackage:\r\n  exclude:\r\n    - node_modules/**\r\n    - venv/**",
+    "command": [
+      "logs"
+    ],
+    "options": {
+      "function": "main",
+      "stage": "prod"
+    },
+    "error": null,
+    "params": {},
+    "machineId": "166bb2719c083d4f1fabbeb0ed5484a7",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "61d4abb8-89c5-4dd6-97a7-cdb6e2778238",
+    "orgName": "phongdev01",
+    "userId": "39cLSjGyr3JjwHrmnW",
+    "dashboard": {
+      "isEnabledForService": true,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": {
+        "providers": true,
+        "monitoring": false
+      },
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": "c6KLS2T4MNGjz94RGp",
+      "serviceProvider": {
+        "accessKeyId": "<REDACTED>",
+        "secretAccessKey": "<REDACTED>",
+        "sessionToken": "<REDACTED>"
+      },
+      "instanceParameters": null
+    },
+    "userName": "phongdev01",
+    "subscription": null,
+    "userEmail": "vudinhphong.261001@gmail.com",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "381492045222",
+    "versionSf": "4.1.12",
+    "serviceProviderAwsCfStackName": "hdw-nestjs-serverless-prod",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:381492045222:stack/hdw-nestjs-serverless-prod/1b1396f0-43f2-11ef-84d8-0affc4536fbd",
+    "serviceProviderAwsCfStackCreated": "2024-07-17T04:07:38.766Z",
+    "serviceProviderAwsCfStackUpdated": "2024-07-17T04:08:18.731Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "MainLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:us-east-1:381492045222:function:hdw-nestjs-serverless-prod-main:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-hdw-nestjs-serverless-prod-MainLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServiceEndpoint",
+        "OutputValue": "https://7gw6v8iby9.execute-api.us-east-1.amazonaws.com/prod",
+        "Description": "URL of the service endpoint",
+        "ExportName": "sls-hdw-nestjs-serverless-prod-ServiceEndpoint"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "hdw-nestjs-serverless-pro-serverlessdeploymentbuck-05inbueu1j6i",
+        "ExportName": "sls-hdw-nestjs-serverless-prod-ServerlessDeploymentBucketName"
+      }
+    ]
+  }
+}
