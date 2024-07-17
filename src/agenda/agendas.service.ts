@@ -9,6 +9,7 @@ export class AgendaService {
   private agenda: any;
 
   constructor() {
+    this.logger = new Logger(AgendaService.name); // Tạo Logger với tên của service
     this.agenda = new Agenda({ db: { address: process.env.MONGODB_URI } });
     this.defineDatabaseHealthCheckJob();
   }
@@ -52,6 +53,7 @@ export class AgendaService {
 
   @Cron(CronExpression.EVERY_MINUTE) // Chạy mỗi phút
   async handleCron() {
+    this.logger.log('handleCron is called');
     await this.agenda.start();
     await this.agenda.every('1 minute', 'check-database-connection');
   }
